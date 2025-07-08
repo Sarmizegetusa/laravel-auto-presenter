@@ -19,14 +19,13 @@ use Illuminate\Support\Collection;
 use McCool\LaravelAutoPresenter\AutoPresenter;
 use McCool\LaravelAutoPresenter\Decorators\ArrayDecorator;
 use Mockery;
+use PHPUnit\Framework\Attributes\Before;
 
 class ArrayDecoratorTest extends AbstractTestCase
 {
     private $decorator;
 
-    /**
-     * @before
-     */
+    #[Before]
     public function setUpProperties()
     {
         $this->decorator = new ArrayDecorator(Mockery::mock(AutoPresenter::class));
@@ -57,6 +56,8 @@ class ArrayDecoratorTest extends AbstractTestCase
         if (version_compare(PHP_VERSION, '7.0.2') > -1 && version_compare(PHP_VERSION, '7.1') < -1) {
             $this->markTestSkipped('Skipped due to mockery incompatibility.');
         }
+
+        $this->expectNotToPerformAssertions();
 
         $collection = Mockery::mock(Collection::class)->makePartial();
 

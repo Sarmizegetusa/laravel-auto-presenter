@@ -19,14 +19,13 @@ use Illuminate\Pagination\Paginator;
 use McCool\LaravelAutoPresenter\AutoPresenter;
 use McCool\LaravelAutoPresenter\Decorators\PaginatorDecorator;
 use Mockery;
+use PHPUnit\Framework\Attributes\Before;
 
 class PaginatorDecoratorTest extends AbstractTestCase
 {
     private $decorator;
 
-    /**
-     * @before
-     */
+    #[Before]
     public function setUpProperties()
     {
         $this->decorator = new PaginatorDecorator(Mockery::mock(AutoPresenter::class));

@@ -24,14 +24,13 @@ use McCool\Tests\Stubs\ModelPresenter;
 use McCool\Tests\Stubs\ModelStub;
 use McCool\Tests\Stubs\UndecoratedModelStub;
 use Mockery;
+use PHPUnit\Framework\Attributes\Before;
 
 class AtomDecoratorTest extends AbstractTestCase
 {
     private $decorator;
 
-    /**
-     * @before
-     */
+    #[Before]
     public function setUpProperties()
     {
         $this->decorator = new AtomDecorator(Mockery::mock(AutoPresenter::class), Mockery::mock(Container::class));
