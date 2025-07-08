@@ -95,7 +95,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:10.*" "phpunit/phpunit:^10.0" --no-update --no-interaction
+          command: composer require "laravel/framework:10.*" "phpunit/phpunit:^10.1" --no-update --no-interaction
         if: "matrix.laravel == '10'"
 
       - name: Select Laravel 11
@@ -103,7 +103,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:11.*" "phpunit/phpunit:^11.0" --no-update --no-interaction
+          command: composer require "laravel/framework:11.*" "phpunit/phpunit:^11.0.1" --no-update --no-interaction
         if: "matrix.laravel == '11'"
 
       - name: Select Laravel 12
@@ -111,7 +111,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: composer require "laravel/framework:12.*" "phpunit/phpunit:^11.0" --no-update --no-interaction
+          command: composer require "laravel/framework:12.*" "phpunit/phpunit:^11.5.3" --no-update --no-interaction
         if: "matrix.laravel == '12'"
 
       - name: Install PHP Dependencies
