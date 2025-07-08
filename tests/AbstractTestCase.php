@@ -24,7 +24,7 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      *
      * @return string
      */
-    protected static function getServiceProviderClass()
+    protected static function getServiceProviderClass(): string
     {
         return AutoPresenterServiceProvider::class;
     }
